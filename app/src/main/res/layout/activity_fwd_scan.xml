@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    tools:context=".FwdScanActivity"
+    tools:deviceIds="wear_square"
+    >
 
+    <view
+        android:layout_width="116dp"
+        android:layout_height="68dp"
+        class="coh.wear.lib.GifWebView"
+        android:id="@+id/webView"
+        android:layout_gravity="center" />
 </FrameLayout>
