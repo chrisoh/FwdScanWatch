@@ -1,12 +1,12 @@
 package com.chrisoh.fwdscanwatch;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.wearable.activity.WatchActivity;
 import android.support.wearable.view.WatchViewStub;
 import android.util.Log;
 import android.widget.TextView;
 
-public class FwdScanActivity  extends WatchActivity {
+public class FwdScanActivity  extends Activity {
 
     private TextView mTextView;
 
@@ -19,7 +19,7 @@ public class FwdScanActivity  extends WatchActivity {
             @Override
             public void onLayoutInflated(WatchViewStub stub) {
                 mTextView = (TextView) stub.findViewById(R.id.text);
-                Log.d(TAG, "TextView: " + mTextView.getText() + " view=" + mTextView);
+               //Log.d(TAG, "TextView: " + mTextView.getText() + " view=" + mTextView);
             }
         });
     }
