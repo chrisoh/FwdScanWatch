@@ -7,7 +7,7 @@
     android:background="@drawable/background"
     tools:context=".FwdScanActivity"
     tools:deviceIds="wear_square"
-    >
+    android:id="@+id/fwdScanLayout">
 
     <ImageView
         android:layout_width="125dp"
@@ -16,4 +16,30 @@
         android:layout_gravity="center"
         android:contentDescription="Animation"
          />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/timeTextView"
+        android:layout_gravity="center_horizontal|top"
+        android:textStyle="bold"
+        android:textColor="#ffff9a42"
+        android:textSize="34sp"
+        android:textAppearance="@style/TextAppearance.Wearable.Large"
+        android:capitalize="characters"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/dateTextView"
+        android:layout_gravity="center_horizontal|bottom"
+        android:textStyle="bold"
+        android:textColor="#FFEC47"
+        android:textSize="34sp"
+        android:textAppearance="@style/TextAppearance.Wearable.Large"
+        android:capitalize="characters"
+        android:layout_marginBottom="20dp" />
 </FrameLayout>
