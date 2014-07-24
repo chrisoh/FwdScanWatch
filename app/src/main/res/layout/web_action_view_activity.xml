@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<coh.wear.lib.GifWebView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="116dp"
+    android:layout_height="68dp"
+    class="coh.wear.lib.GifWebView"
+    android:id="@+id/webviewActionView"
+    android:layout_gravity="center" />

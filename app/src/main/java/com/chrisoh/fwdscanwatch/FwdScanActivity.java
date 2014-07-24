@@ -1,41 +1,49 @@
 package com.chrisoh.fwdscanwatch;
 
 import android.app.Activity;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.wearable.view.WatchViewStub;
-import android.util.Log;
-import android.view.SurfaceView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import coh.wear.lib.GifWebView;
 
 public class FwdScanActivity  extends Activity {
 
-    private static final String TAG = "FaceActivity";
-
     private TextView mTextView;
-    private GifWebView fwdScanView;
     private Handler handler;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fwd_scan);
+        setContentView(R.layout.activity_watch_face);
 
-        fwdScanView = new GifWebView(this, "file:///res/drawable/animated_fwd_scan.gif");
-
-
-//        final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
-//        stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
-//            @Override
-//            public void onLayoutInflated(WatchViewStub stub) {
-//                mTextView = (TextView) stub.findViewById(R.id.text);
-//               //Log.d(TAG, "TextView: " + mTextView.getText() + " view=" + mTextView);
-//            }
-//        });
-
+        final ImageView animImageView = (ImageView) findViewById(R.id.fwdScanImageView);
+        animImageView.setBackgroundResource(R.drawable.anim);
+        animImageView.post(new Runnable() {
+            @Override
+            public void run() {
+                AnimationDrawable frameAnimation =
+                        (AnimationDrawable) animImageView.getBackground();
+                frameAnimation.start();
+            }
+        });
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();  // Fix001 - Super was not called
+    }
+
 }
